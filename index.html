@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akash Gaikwad — Full-Stack & AI Developer</title>
+<meta name="description" content="Akash Gaikwad — full-stack & AI developer. Selected work across full-stack apps, AI/ML, systems, and client websites.">
+<meta property="og:title" content="Akash Gaikwad — Full-Stack & AI Developer">
+<meta property="og:description" content="Selected work across full-stack apps, AI/ML, systems, and client websites.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js" defer></script>
+</head>
+<body>
+<div style="position:relative;width:100%;background:#000;color:#fff;font-family:'Archivo',sans-serif;overflow-x:hidden;">
+
+  <!-- CUSTOM CURSOR -->
+  <div data-cursor-ring style="position:fixed;top:0;left:0;width:38px;height:38px;border:1.5px solid rgba(255,255,255,.55);border-radius:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;transition:width .25s,height .25s,background .25s,border-color .25s;mix-blend-mode:difference;"></div>
+  <div data-cursor-dot style="position:fixed;top:0;left:0;width:5px;height:5px;background:#fff;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;mix-blend-mode:difference;"></div>
+
+  <!-- NAV -->
+  <nav style="position:fixed;top:22px;left:50%;transform:translateX(-50%);z-index:200;display:flex;align-items:center;gap:28px;padding:9px 9px 9px 22px;border-radius:100px;background:rgba(14,14,20,.55);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1);">
+    <span style="font-size:16px;font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:8px;white-space:nowrap;"><span style="background:linear-gradient(135deg,#7A4DFF,#B06BFF);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:20px;">✦</span>Akash Gaikwad</span>
+    <div class="nv-hide-sm" style="display:flex;gap:24px;font-size:13.5px;color:#9A9AA8;">
+      <a data-cursor href="#work" style="color:inherit;text-decoration:none;">Work</a>
+      <a data-cursor href="#projects" style="color:inherit;text-decoration:none;">Projects</a>
+      <a data-cursor href="#about" style="color:inherit;text-decoration:none;">About</a>
+      <a data-cursor href="#contact" style="color:inherit;text-decoration:none;">Contact</a>
+    </div>
+    <a data-cursor data-magnetic href="#contact" style="text-decoration:none;background:#fff;color:#000;font-size:13px;font-weight:600;padding:11px 20px;border-radius:100px;white-space:nowrap;">Let's talk</a>
+  </nav>
+
+  <!-- HERO -->
+  <header style="position:relative;min-height:100vh;padding:0 clamp(20px,6vw,88px);display:flex;align-items:center;overflow:hidden;">
+    <div data-bloom style="position:absolute;top:50%;left:66%;width:760px;height:760px;border-radius:50%;background:radial-gradient(circle,rgba(122,77,255,.45),rgba(176,107,255,.18) 42%,transparent 68%);filter:blur(10px);animation:nv-bloom 9s ease-in-out infinite;pointer-events:none;"></div>
+    <div class="nv-hero-grid" style="position:relative;z-index:3;max-width:1460px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;">
+      <div>
+        <div data-hero style="display:inline-flex;align-items:center;gap:9px;font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:#B06BFF;margin-bottom:26px;"><span style="width:24px;height:1px;background:#B06BFF;display:inline-block;"></span>Full-stack &amp; AI developer</div>
+        <h1 style="margin:0;font-weight:800;line-height:.9;letter-spacing:-.03em;font-size:clamp(3rem,9vw,8rem);">
+          <span data-hero style="display:block;">I build products</span>
+          <span data-hero style="display:block;color:transparent;-webkit-text-stroke:1.4px rgba(255,255,255,.85);">that think ahead</span>
+        </h1>
+        <p data-hero style="max-width:480px;margin:30px 0 0;font-size:16px;line-height:1.7;color:#9A9AA8;">I'm Akash — I design and ship full-stack apps, AI systems, and client websites end to end. From a fintech analytics platform to a data-structures CDN engine, I turn ideas into things that actually run.</p>
+        <div data-hero style="display:flex;gap:13px;margin-top:34px;flex-wrap:wrap;">
+          <a data-cursor data-magnetic href="#work" style="text-decoration:none;background:linear-gradient(135deg,#7A4DFF,#B06BFF);color:#fff;font-size:14px;font-weight:600;padding:15px 28px;border-radius:100px;">View my work</a>
+          <a data-cursor data-magnetic href="#contact" style="text-decoration:none;border:1px solid rgba(255,255,255,.2);color:#fff;font-size:14px;font-weight:500;padding:15px 28px;border-radius:100px;">Get in touch</a>
+        </div>
+        <div data-hero style="display:flex;gap:30px;margin-top:46px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:#5d5d6b;">
+          <span>8 SHIPPED PROJECTS</span><span class="nv-hide-sm">JS · PYTHON · JAVA · C++</span>
+        </div>
+      </div>
+      <div data-hero-img style="position:relative;aspect-ratio:3/4;border-radius:20px;overflow:hidden;border:1px solid rgba(176,107,255,.28);background:linear-gradient(150deg,#191527,#0b0a12);will-change:transform;">
+        <div style="position:absolute;inset:0;background:radial-gradient(120% 80% at 60% 25%,rgba(176,107,255,.5),transparent 55%),conic-gradient(from 210deg at 65% 60%,rgba(59,91,255,.45),transparent 42%);"></div>
+        <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.04) 0 2px,transparent 2px 13px);"></div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:clamp(4rem,10vw,7rem);letter-spacing:-.04em;color:rgba(255,255,255,.9);text-shadow:0 8px 40px rgba(122,77,255,.5);">AG</div>
+        <span style="position:absolute;left:18px;bottom:16px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.55);">[ drop your photo here ]</span>
+      </div>
+    </div>
+    <div data-hero style="position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;color:#5d5d6b;">SCROLL ↓</div>
+  </header>
+
+  <!-- MARQUEE -->
+  <div style="border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding:18px 0;overflow:hidden;white-space:nowrap;background:#050509;">
+    <div style="display:inline-block;animation:nv-marquee 26s linear infinite;font-size:26px;font-weight:700;letter-spacing:-.02em;color:#26262f;">
+      <span>React&nbsp;&nbsp;<span style="color:#7A4DFF;">✦</span>&nbsp;&nbsp;Node.js&nbsp;&nbsp;<span style="color:#7A4DFF;">✦</span>&nbsp;&nbsp;Python&nbsp;&nbsp;<span style="color:#7A4DFF;">✦</span>&nbsp;&nbsp;Java / Spring&nbsp;&nbsp;<span style="color:#7A4DFF;">✦</span>&nbsp;&nbsp;C++&nbsp;&nbsp;<span style="color:#7A4DFF;">✦</span>&nbsp;&nbsp;MongoDB&nbsp;&nbsp;<span style="color:#7A4DFF;">✦</span>&nbsp;&nbsp;Docker&nbsp;&nbsp;<span style="color:#7A4DFF;">✦</span>&nbsp;&nbsp;AI / ML&nbsp;&nbsp;<span style="color:#7A4DFF;">✦</span>&nbsp;&nbsp;</span>
+      <span>React&nbsp;&nbsp;<span style="color:#7A4DFF;">✦</span>&nbsp;&nbsp;Node.js&nbsp;&nbsp;<span style="color:#7A4DFF;">✦</span>&nbsp;&nbsp;Python&nbsp;&nbsp;<span style="color:#7A4DFF;">✦</span>&nbsp;&nbsp;Java / Spring&nbsp;&nbsp;<span style="color:#7A4DFF;">✦</span>&nbsp;&nbsp;C++&nbsp;&nbsp;<span style="color:#7A4DFF;">✦</span>&nbsp;&nbsp;MongoDB&nbsp;&nbsp;<span style="color:#7A4DFF;">✦</span>&nbsp;&nbsp;Docker&nbsp;&nbsp;<span style="color:#7A4DFF;">✦</span>&nbsp;&nbsp;AI / ML&nbsp;&nbsp;<span style="color:#7A4DFF;">✦</span>&nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- HORIZONTAL PROJECT SHOWCASE (dynamic — featured projects) -->
+  <section id="work" data-hscroll style="position:relative;height:100vh;overflow:hidden;background:#050509;">
+    <div style="position:absolute;top:32px;left:clamp(20px,6vw,88px);z-index:5;font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.2em;color:#5d5d6b;">/ 01 — SELECTED WORK</div>
+    <div data-htrack style="position:absolute;top:0;left:0;height:100%;display:flex;align-items:center;gap:28px;padding:0 clamp(20px,6vw,88px);will-change:transform;">
+      <!-- project panels injected here by main.js -->
+      <div data-htrack-outro style="flex:0 0 auto;width:40vw;max-width:430px;height:74vh;display:flex;flex-direction:column;justify-content:center;gap:18px;padding-right:clamp(20px,6vw,88px);">
+        <h3 style="margin:0;font-weight:800;letter-spacing:-.03em;line-height:1;font-size:clamp(1.9rem,4vw,3rem);">Scroll built <span style="color:#CFFF3D;">sideways.</span></h3>
+        <p style="margin:0;font-size:14.5px;color:#9A9AA8;line-height:1.65;">Click any card for the full case. See everything below, filtered by category.</p>
+        <a data-cursor data-magnetic href="#projects" style="text-decoration:none;align-self:flex-start;border:1px solid rgba(255,255,255,.22);color:#fff;font-size:14px;padding:14px 26px;border-radius:100px;">All projects →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL PROJECTS GRID (dynamic + category filter) -->
+  <section id="projects" style="padding:clamp(80px,11vw,140px) clamp(20px,6vw,88px);max-width:1460px;margin:0 auto;">
+    <div class="reveal-up" style="display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:34px;">
+      <div>
+        <div style="font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.2em;color:#7A4DFF;margin-bottom:16px;">/ 02 — EVERYTHING I'VE BUILT</div>
+        <h2 style="margin:0;font-weight:800;letter-spacing:-.03em;font-size:clamp(2rem,4.6vw,3.6rem);line-height:1;">Projects, by <span style="color:#CFFF3D;">category</span></h2>
+      </div>
+      <p style="max-width:360px;margin:0;font-size:14.5px;line-height:1.7;color:#9A9AA8;">Full-stack apps, AI systems, low-level engines, and client websites. Tap a card for the deep dive, live demo, and code.</p>
+    </div>
+    <div class="filters" data-filters><!-- filter tabs injected --></div>
+    <div class="pgrid" data-grid><!-- project cards injected --></div>
+  </section>
+
+  <!-- 3D TILT — WHAT I BUILD -->
+  <section id="services" style="position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:90px 20px;">
+    <div data-revealtext style="position:absolute;width:200%;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;font-weight:800;letter-spacing:-.03em;font-size:clamp(2.6rem,8vw,7rem);color:#15151c;white-space:nowrap;pointer-events:none;">Full-stack · AI · and everything between</div>
+    <div style="position:relative;z-index:3;display:flex;align-items:center;justify-content:center;perspective:1400px;">
+      <div data-cursor style="position:relative;width:200px;height:300px;border-radius:20px;margin-right:-44px;transform:rotateY(20deg) translateZ(-40px);border:1px solid rgba(255,255,255,.1);background:linear-gradient(160deg,#1a1a24,#0c0c12);box-shadow:0 30px 60px rgba(0,0,0,.5);"><div style="position:absolute;inset:0;background:radial-gradient(80% 60% at 50% 30%,rgba(59,91,255,.3),transparent 60%);border-radius:20px;"></div><span style="position:absolute;left:16px;bottom:14px;font-weight:700;font-size:14px;">Frontend</span></div>
+      <div data-tilt data-cursor style="position:relative;width:300px;height:400px;border-radius:24px;z-index:5;border:1px solid rgba(176,107,255,.4);background:linear-gradient(160deg,#7A4DFF,#5733cc 60%,#3a1f99);box-shadow:0 40px 90px rgba(122,77,255,.45);display:flex;flex-direction:column;justify-content:space-between;padding:26px;will-change:transform;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;"><span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.1em;background:rgba(0,0,0,.25);padding:5px 9px;border-radius:20px;">CORE</span><span style="font-family:'Space Mono',monospace;font-size:10px;color:rgba(255,255,255,.7);">2026</span></div>
+        <div data-tilt-inner style="align-self:center;font-size:64px;transform:translateZ(50px);">✦</div>
+        <div style="transform:translateZ(30px);"><div style="font-weight:700;font-size:20px;letter-spacing:-.02em;">Full-stack + AI,</div><div style="font-weight:700;font-size:20px;letter-spacing:-.02em;color:rgba(255,255,255,.75);">built end to end</div></div>
+      </div>
+      <div data-cursor style="position:relative;width:200px;height:300px;border-radius:20px;margin-left:-44px;transform:rotateY(-20deg) translateZ(-40px);border:1px solid rgba(207,255,61,.4);background:linear-gradient(160deg,#cfff3d,#9bc41f);box-shadow:0 30px 60px rgba(0,0,0,.5);"><div style="position:absolute;inset:0;background:radial-gradient(80% 60% at 50% 30%,rgba(255,255,255,.35),transparent 60%);border-radius:20px;"></div><span style="position:absolute;left:16px;bottom:14px;color:#1a1f06;font-weight:700;font-size:14px;">Client work</span></div>
+    </div>
+    <div style="position:absolute;bottom:34px;left:50%;transform:translateX(-50%);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.18em;color:#5d5d6b;">↤ MOVE YOUR CURSOR ↦</div>
+  </section>
+
+  <!-- PINNED HORIZONTAL TEXT -->
+  <section data-textpin style="position:relative;height:100vh;overflow:hidden;display:flex;align-items:center;background:#050509;">
+    <div data-textmove style="display:flex;align-items:center;gap:36px;white-space:nowrap;will-change:transform;padding-left:30vw;">
+      <span style="color:#CFFF3D;font-size:clamp(2rem,5vw,3.5rem);">○</span>
+      <span style="font-weight:800;letter-spacing:-.03em;font-size:clamp(3rem,11vw,9rem);color:#fff;">Code that ships</span>
+      <span style="color:#7A4DFF;font-size:clamp(2rem,5vw,3.5rem);">○</span>
+      <span style="font-weight:800;letter-spacing:-.03em;font-size:clamp(3rem,11vw,9rem);color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.6);">design that sells</span>
+      <span style="color:#B06BFF;font-size:clamp(2rem,5vw,3.5rem);">○</span>
+    </div>
+  </section>
+
+  <!-- ABOUT / PARTICLE FIELD -->
+  <section id="about" style="position:relative;min-height:100vh;overflow:hidden;background:#000;">
+    <canvas data-particles style="position:absolute;inset:0;width:100%;height:100%;display:block;"></canvas>
+    <div style="position:absolute;top:11%;left:clamp(20px,6vw,88px);z-index:3;font-weight:800;letter-spacing:-.04em;font-size:clamp(3rem,11vw,9rem);line-height:.9;">About</div>
+    <div style="position:absolute;bottom:13%;right:clamp(20px,6vw,88px);z-index:3;text-align:right;font-weight:800;letter-spacing:-.04em;font-size:clamp(3rem,11vw,9rem);line-height:.9;">the maker</div>
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;font-size:clamp(2rem,5vw,3.4rem);color:#B06BFF;filter:drop-shadow(0 0 24px rgba(176,107,255,.7));">✦</div>
+    <div style="position:absolute;left:clamp(20px,6vw,88px);bottom:13%;z-index:3;max-width:420px;">
+      <p style="margin:0;font-size:15px;line-height:1.75;color:#c2c2d0;">I'm a developer who likes going deep — from a config-driven credit engine with 35 passing tests to a CDN modelled from raw data structures. I care about things that <span style="color:#CFFF3D;">actually work</span>: real error handling, real tests, real deploys. I also build websites for clients who want to stand out.</p>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA / CONTACT -->
+  <section id="contact" style="position:relative;padding:clamp(100px,15vw,200px) clamp(20px,6vw,88px) 70px;text-align:center;overflow:hidden;">
+    <div style="position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(122,77,255,.32),transparent 65%);filter:blur(20px);pointer-events:none;"></div>
+    <div class="reveal-up" style="position:relative;z-index:2;max-width:980px;margin:0 auto;">
+      <div style="font-size:clamp(2.4rem,5vw,3.6rem);color:#B06BFF;filter:drop-shadow(0 0 28px rgba(176,107,255,.7));margin-bottom:26px;">✦</div>
+      <h2 style="margin:0;font-weight:800;letter-spacing:-.03em;line-height:.96;font-size:clamp(2.6rem,7.5vw,6.4rem);">Let's build something<br>that <span style="color:transparent;-webkit-text-stroke:1.4px rgba(255,255,255,.85);">thinks ahead</span></h2>
+      <p style="max-width:520px;margin:28px auto 0;font-size:16px;line-height:1.7;color:#9A9AA8;">Have a product, a project, or a website in mind? I'm open to full-stack work, AI builds, and freelance client sites. Let's talk.</p>
+      <div style="display:flex;gap:13px;justify-content:center;flex-wrap:wrap;margin-top:38px;">
+        <a data-cursor data-magnetic href="mailto:akash.gaikwad1304@gmail.com" style="display:inline-block;text-decoration:none;background:linear-gradient(135deg,#7A4DFF,#B06BFF);color:#fff;font-size:15px;font-weight:600;padding:18px 40px;border-radius:100px;">Email me ↗</a>
+        <a data-cursor data-magnetic href="https://github.com/1Akash3" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none;border:1px solid rgba(255,255,255,.22);color:#fff;font-size:15px;font-weight:600;padding:18px 40px;border-radius:100px;">GitHub ↗</a>
+      </div>
+    </div>
+    <footer style="position:relative;z-index:2;max-width:1460px;margin:120px auto 0;padding-top:34px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;">
+      <span style="font-size:16px;font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:8px;"><span style="color:#B06BFF;">✦</span>Akash Gaikwad</span>
+      <div class="nv-hide-sm" style="display:flex;gap:24px;font-size:13px;color:#9A9AA8;"><a data-cursor href="#work" style="color:inherit;text-decoration:none;">Work</a><a data-cursor href="#projects" style="color:inherit;text-decoration:none;">Projects</a><a data-cursor href="#about" style="color:inherit;text-decoration:none;">About</a><a data-cursor href="#contact" style="color:inherit;text-decoration:none;">Contact</a></div>
+      <div style="display:flex;gap:20px;font-size:13px;color:#9A9AA8;"><a data-cursor href="https://github.com/1Akash3" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">GitHub</a><a data-cursor href="#contact" data-linkedin style="color:inherit;text-decoration:none;">LinkedIn</a><a data-cursor href="mailto:akash.gaikwad1304@gmail.com" style="color:inherit;text-decoration:none;">Email</a></div>
+    </footer>
+    <div style="position:relative;z-index:2;margin-top:30px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3a3a44;">© 2026 Akash Gaikwad — Built with the NOVA design system</div>
+  </section>
+
+</div>
+<script src="js/projects.js"></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
