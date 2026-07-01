@@ -18,9 +18,9 @@
      accent    "blue" | "violet" | "lime" | "cyan" | "magenta"  (card gradient)
      featured  true = also shown in the horizontal cinematic strip
 ============================================================================= */
-// Contact config — set `phone` to your number (e.g. "+91 98765 43210") to
-// reveal the "Call" button in the contact section. Leave "" to hide it.
-window.CONTACT = { phone: "" };
+// Contact config. `phone` reveals the Call button; `whatsapp` (digits with
+// country code, no +) reveals the WhatsApp button. Leave "" to hide either.
+window.CONTACT = { phone: "+91 77440 24465", whatsapp: "917744024465" };
 
 window.PROJECTS = [
   {
@@ -41,7 +41,8 @@ window.PROJECTS = [
       "Installable PWA + emailed PDF financial reports"
     ],
     tech: ["React 18", "Vite", "Tailwind", "Recharts", "Framer Motion", "Node/Express", "MongoDB Atlas", "Anthropic Claude", "Capacitor", "Brevo SMTP"],
-    links: { demo: null, code: "https://github.com/1Akash3/SmartMoneyManagar" },
+    links: { demo: "https://smart-money-managar-xdti-one.vercel.app/", code: "https://github.com/1Akash3/SmartMoneyManagar" },
+    image: "images/shots/spendsmart.png",
     accent: "violet",
     featured: true
   },
@@ -64,6 +65,7 @@ window.PROJECTS = [
     ],
     tech: ["Node/Express", "Joi", "Mongoose", "React 18", "Vite", "Recharts", "puppeteer-core", "@react-pdf"],
     links: { demo: null, code: "https://github.com/1Akash3/Loan-Approval" },
+    image: "images/shots/credit-engine.png",
     accent: "blue",
     featured: false
   },
@@ -130,6 +132,7 @@ window.PROJECTS = [
     ],
     tech: ["C++17", "Data Structures", "Dijkstra", "Vanilla JS", "SVG animation"],
     links: { demo: "https://1akash3.github.io/Content-Delivery-Network/", code: "https://github.com/1Akash3/Content-Delivery-Network" },
+    image: "images/shots/cdn-sim.png",
     accent: "blue",
     featured: true
   },
@@ -173,6 +176,7 @@ window.PROJECTS = [
     ],
     tech: ["HTML5", "Tailwind CSS", "Vanilla JS (ES6)", "localStorage", "Razorpay"],
     links: { demo: "https://1akash3.github.io/course-selling-website/", code: "https://github.com/1Akash3/course-selling-website" },
+    image: "images/shots/coursehub.png",
     accent: "cyan",
     featured: true
   },

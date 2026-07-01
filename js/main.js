@@ -228,7 +228,7 @@
     const rt = el("[data-revealtext]");
     if (rt && ST && !reduce) gsap.fromTo(rt, { x: "-12%" }, { x: "6%", ease: "none", scrollTrigger: { trigger: rt.closest("section"), start: "top bottom", end: "bottom top", scrub: 1 } });
 
-    /* 3D tilt cards */
+    /* 3D tilt cards (grid) — tilt when hovered directly */
     if (!coarse) q("[data-tilt]").forEach((card) => {
       card.addEventListener("mousemove", (e) => {
         const r = card.getBoundingClientRect();
@@ -237,6 +237,24 @@
       });
       card.addEventListener("mouseleave", () => gsap.to(card, { rotateY: 0, rotateX: 0, duration: 0.7, ease: "elastic.out(1,0.5)" }));
     });
+
+    /* Hero tilt card — driven by cursor anywhere in its section, so it visibly
+       reacts even when the pointer isn't directly on the card. */
+    const svc = el("#services");
+    const heroCard = el("[data-tilt-hero]");
+    const heroInner = heroCard && heroCard.querySelector("[data-tilt-inner]");
+    if (svc && heroCard && !coarse) {
+      svc.addEventListener("mousemove", (e) => {
+        const px = (e.clientX / window.innerWidth - 0.5) * 2;   // -1 … 1
+        const py = (e.clientY - svc.getBoundingClientRect().top - svc.offsetHeight / 2) / (svc.offsetHeight / 2);
+        gsap.to(heroCard, { rotateY: px * 22, rotateX: -py * 18, duration: 0.6, ease: "power2", transformPerspective: 1000, transformOrigin: "center", scale: 1.03 });
+        if (heroInner) gsap.to(heroInner, { x: px * 26, y: py * 20, duration: 0.6, ease: "power2" });
+      });
+      svc.addEventListener("mouseleave", () => {
+        gsap.to(heroCard, { rotateY: 0, rotateX: 0, scale: 1, duration: 0.9, ease: "elastic.out(1,0.5)" });
+        if (heroInner) gsap.to(heroInner, { x: 0, y: 0, duration: 0.9, ease: "elastic.out(1,0.5)" });
+      });
+    }
 
     /* draggable scatter */
     if (window.Draggable) q("[data-drag]").forEach((elm) => {
@@ -292,12 +310,13 @@
 
   /* -------------------------------------------------------------- boot */
   function initPhone() {
-    const phone = (window.CONTACT && window.CONTACT.phone || "").trim();
-    const btn = el("[data-phone]");
-    if (btn && phone) {
-      btn.href = "tel:" + phone.replace(/[^+\d]/g, "");
-      btn.style.display = "inline-block";
-    }
+    const c = window.CONTACT || {};
+    const phone = (c.phone || "").trim();
+    const wa = (c.whatsapp || "").replace(/[^\d]/g, "");
+    const pbtn = el("[data-phone]");
+    if (pbtn && phone) { pbtn.href = "tel:" + phone.replace(/[^+\d]/g, ""); pbtn.style.display = "inline-block"; }
+    const wbtn = el("[data-whatsapp]");
+    if (wbtn && wa) { wbtn.href = "https://wa.me/" + wa; wbtn.style.display = "inline-block"; }
   }
 
   function boot() {
