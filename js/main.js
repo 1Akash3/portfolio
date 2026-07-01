@@ -29,22 +29,21 @@
     const frag = document.createDocumentFragment();
     feat.forEach((p, i) => {
       const a = acc(p.accent);
+      const cover = p.image || ("images/covers/" + p.id + ".svg");
       const panel = document.createElement("div");
       panel.className = "work-panel";
       panel.setAttribute("data-cursor", "");
       panel.setAttribute("data-project", p.id);
       panel.style.cssText =
         "flex:0 0 auto;position:relative;width:62vw;max-width:720px;height:74vh;border-radius:20px;overflow:hidden;cursor:pointer;border:1px solid " +
-        a.line + ";background:" + a.g + ";";
+        a.line + ";background:linear-gradient(to top,rgba(6,6,12,.94) 14%,rgba(6,6,12,.4) 46%,rgba(6,6,12,.05) 72%),url('" + cover + "') center/cover no-repeat," + a.g + ";";
       panel.innerHTML =
-        '<div style="position:absolute;inset:0;background:radial-gradient(95% 75% at ' + (35 + i * 8) + '% 40%,' + a.glow + ',transparent 60%);"></div>' +
-        '<div style="position:absolute;inset:0;background-image:repeating-linear-gradient(' + (60 + i * 20) + 'deg,rgba(255,255,255,0.03) 0 1px,transparent 1px 15px);"></div>' +
-        '<span style="position:absolute;top:20px;left:22px;font-family:\'Space Mono\',monospace;font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.6);">[' +
+        '<span style="position:absolute;top:20px;left:22px;font-family:\'Space Mono\',monospace;font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.7);">[' +
         String(i + 1).padStart(2, "0") + "] " + esc(p.category.toUpperCase()) + "</span>" +
-        '<span style="position:absolute;top:20px;right:22px;font-family:\'Space Mono\',monospace;font-size:11px;color:rgba(255,255,255,.45);">' + esc(p.year) + "</span>" +
+        '<span style="position:absolute;top:20px;right:22px;font-family:\'Space Mono\',monospace;font-size:11px;color:rgba(255,255,255,.55);">' + esc(p.year) + "</span>" +
         '<div style="position:absolute;left:24px;right:24px;bottom:22px;">' +
         '<h3 style="margin:0 0 8px;font-weight:800;letter-spacing:-.03em;font-size:clamp(2rem,4.6vw,3.8rem);line-height:.95;">' + esc(p.name) + "</h3>" +
-        '<p style="margin:0 0 14px;max-width:520px;font-size:14px;line-height:1.55;color:rgba(255,255,255,.72);">' + esc(p.blurb) + "</p>" +
+        '<p style="margin:0 0 14px;max-width:520px;font-size:14px;line-height:1.55;color:rgba(255,255,255,.82);">' + esc(p.blurb) + "</p>" +
         '<span style="display:inline-flex;align-items:center;gap:8px;font-family:\'Space Mono\',monospace;font-size:11px;letter-spacing:.1em;color:' + a.chip + ';">VIEW CASE →</span>' +
         "</div>";
       frag.appendChild(panel);
@@ -66,10 +65,15 @@
 
     grid.innerHTML = PROJECTS.map((p) => {
       const a = acc(p.accent);
+      const cover = p.image || ("images/covers/" + p.id + ".svg");
       const tags = (p.tags || []).slice(0, 4).map((t) => '<span class="chip">' + esc(t) + "</span>").join("");
+      const hasDemo = p.links && p.links.demo;
       return (
         '<article class="pcard reveal-up" data-cursor data-tilt data-project="' + p.id + '" data-category="' + esc(p.category) + '" style="--line:' + a.line + ';--glow:' + a.glow + ';--chip:' + a.chip + ';">' +
-        '<div class="pcard-glow"></div>' +
+        '<div class="pcard-cover" style="background-image:url(\'' + cover + '\');">' +
+        (hasDemo ? '<span class="pcard-live">● LIVE</span>' : "") +
+        '<span class="pcard-open">View case →</span>' +
+        "</div>" +
         '<div class="pcard-inner">' +
         '<div class="pcard-top"><span class="pcard-cat" style="color:' + a.chip + ';border-color:' + a.line + ';">' + esc(p.category) + '</span><span class="pcard-year">' + esc(p.year) + "</span></div>" +
         '<div class="pcard-mid"><h3 class="pcard-name">' + esc(p.name) + "</h3><p class=\"pcard-blurb\">" + esc(p.blurb) + "</p></div>" +
@@ -95,6 +99,7 @@
     overlay.innerHTML =
       '<div class="modal" role="dialog" aria-modal="true">' +
       '<button class="modal-close" data-cursor aria-label="Close">✕</button>' +
+      '<div class="modal-banner" data-m="banner"></div>' +
       '<div class="modal-scroll">' +
       '<span class="modal-cat" data-m="cat"></span>' +
       '<h2 class="modal-title" data-m="title"></h2>' +
@@ -117,6 +122,8 @@
     if (!p) return;
     const overlay = el("[data-modal]") || buildModal();
     const a = acc(p.accent);
+    const cover = p.image || ("images/covers/" + p.id + ".svg");
+    el('[data-m="banner"]', overlay).style.backgroundImage = "url('" + cover + "')";
     el('[data-m="cat"]', overlay).textContent = [p.category, p.year, p.role].filter(Boolean).join("  ·  ");
     el('[data-m="cat"]', overlay).style.color = a.chip;
     el('[data-m="title"]', overlay).textContent = p.name;
@@ -284,11 +291,21 @@
   }
 
   /* -------------------------------------------------------------- boot */
+  function initPhone() {
+    const phone = (window.CONTACT && window.CONTACT.phone || "").trim();
+    const btn = el("[data-phone]");
+    if (btn && phone) {
+      btn.href = "tel:" + phone.replace(/[^+\d]/g, "");
+      btn.style.display = "inline-block";
+    }
+  }
+
   function boot() {
     renderFeatured();
     renderGrid();
     buildModal();
     initReveal();
+    initPhone();
     let n = 0;
     (function wait() {
       if (window.gsap && window.ScrollTrigger) return initMotion();

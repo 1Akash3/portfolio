@@ -18,6 +18,10 @@
      accent    "blue" | "violet" | "lime" | "cyan" | "magenta"  (card gradient)
      featured  true = also shown in the horizontal cinematic strip
 ============================================================================= */
+// Contact config — set `phone` to your number (e.g. "+91 98765 43210") to
+// reveal the "Call" button in the contact section. Leave "" to hide it.
+window.CONTACT = { phone: "" };
+
 window.PROJECTS = [
   {
     id: "spendsmart",
@@ -61,7 +65,7 @@ window.PROJECTS = [
     tech: ["Node/Express", "Joi", "Mongoose", "React 18", "Vite", "Recharts", "puppeteer-core", "@react-pdf"],
     links: { demo: null, code: "https://github.com/1Akash3/Loan-Approval" },
     accent: "blue",
-    featured: true
+    featured: false
   },
   {
     id: "quiz-system",

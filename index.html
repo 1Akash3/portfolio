@@ -57,10 +57,10 @@
         </div>
       </div>
       <div data-hero-img style="position:relative;aspect-ratio:3/4;border-radius:20px;overflow:hidden;border:1px solid rgba(176,107,255,.28);background:linear-gradient(150deg,#191527,#0b0a12);will-change:transform;">
-        <div style="position:absolute;inset:0;background:radial-gradient(120% 80% at 60% 25%,rgba(176,107,255,.5),transparent 55%),conic-gradient(from 210deg at 65% 60%,rgba(59,91,255,.45),transparent 42%);"></div>
-        <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.04) 0 2px,transparent 2px 13px);"></div>
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:clamp(4rem,10vw,7rem);letter-spacing:-.04em;color:rgba(255,255,255,.9);text-shadow:0 8px 40px rgba(122,77,255,.5);">AG</div>
-        <span style="position:absolute;left:18px;bottom:16px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.55);">[ drop your photo here ]</span>
+        <!-- Real photo: drop your image at images/akash.jpg (or .png). Falls back to the monogram if missing. -->
+        <img src="images/akash.jpg" alt="Akash Gaikwad" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(15%) contrast(1.02);">
+        <div style="display:none;position:absolute;inset:0;align-items:center;justify-content:center;background:radial-gradient(120% 80% at 60% 25%,rgba(176,107,255,.5),transparent 55%),conic-gradient(from 210deg at 65% 60%,rgba(59,91,255,.45),transparent 42%);font-weight:800;font-size:clamp(4rem,10vw,7rem);letter-spacing:-.04em;color:rgba(255,255,255,.9);text-shadow:0 8px 40px rgba(122,77,255,.5);">AG</div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,7,14,.55),transparent 40%);pointer-events:none;"></div>
       </div>
     </div>
     <div data-hero style="position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;color:#5d5d6b;">SCROLL ↓</div>
@@ -76,7 +76,7 @@
 
   <!-- HORIZONTAL PROJECT SHOWCASE (dynamic — featured projects) -->
   <section id="work" data-hscroll style="position:relative;height:100vh;overflow:hidden;background:#050509;">
-    <div style="position:absolute;top:32px;left:clamp(20px,6vw,88px);z-index:5;font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.2em;color:#5d5d6b;">/ 01 — SELECTED WORK</div>
+    <div style="position:absolute;top:32px;left:clamp(20px,6vw,88px);z-index:5;font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.2em;color:#5d5d6b;">/ 01 — FEATURED WORK &nbsp;·&nbsp; highlights</div>
     <div data-htrack style="position:absolute;top:0;left:0;height:100%;display:flex;align-items:center;gap:28px;padding:0 clamp(20px,6vw,88px);will-change:transform;">
       <!-- project panels injected here by main.js -->
       <div data-htrack-outro style="flex:0 0 auto;width:40vw;max-width:430px;height:74vh;display:flex;flex-direction:column;justify-content:center;gap:18px;padding-right:clamp(20px,6vw,88px);">
@@ -127,13 +127,15 @@
   </section>
 
   <!-- ABOUT / PARTICLE FIELD -->
-  <section id="about" style="position:relative;min-height:100vh;overflow:hidden;background:#000;">
+  <section id="about" class="about-sec" style="position:relative;min-height:100vh;overflow:hidden;background:#000;display:flex;align-items:center;">
     <canvas data-particles style="position:absolute;inset:0;width:100%;height:100%;display:block;"></canvas>
-    <div style="position:absolute;top:11%;left:clamp(20px,6vw,88px);z-index:3;font-weight:800;letter-spacing:-.04em;font-size:clamp(3rem,11vw,9rem);line-height:.9;">About</div>
-    <div style="position:absolute;bottom:13%;right:clamp(20px,6vw,88px);z-index:3;text-align:right;font-weight:800;letter-spacing:-.04em;font-size:clamp(3rem,11vw,9rem);line-height:.9;">the maker</div>
-    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;font-size:clamp(2rem,5vw,3.4rem);color:#B06BFF;filter:drop-shadow(0 0 24px rgba(176,107,255,.7));">✦</div>
-    <div style="position:absolute;left:clamp(20px,6vw,88px);bottom:13%;z-index:3;max-width:420px;">
-      <p style="margin:0;font-size:15px;line-height:1.75;color:#c2c2d0;">I'm a developer who likes going deep — from a config-driven credit engine with 35 passing tests to a CDN modelled from raw data structures. I care about things that <span style="color:#CFFF3D;">actually work</span>: real error handling, real tests, real deploys. I also build websites for clients who want to stand out.</p>
+    <div class="about-inner" style="position:relative;z-index:3;width:100%;max-width:1460px;margin:0 auto;padding:120px clamp(20px,6vw,88px);">
+      <h2 class="about-title" style="margin:0;font-weight:800;letter-spacing:-.04em;line-height:.88;font-size:clamp(3rem,10vw,8rem);">About<br><span style="color:transparent;-webkit-text-stroke:1.4px rgba(255,255,255,.7);">the maker</span></h2>
+      <div class="about-copy" style="max-width:460px;margin:38px 0 0;">
+        <div style="font-size:clamp(1.8rem,4vw,2.6rem);color:#B06BFF;filter:drop-shadow(0 0 22px rgba(176,107,255,.7));margin-bottom:18px;">✦</div>
+        <p style="margin:0;font-size:15.5px;line-height:1.75;color:#c9c9d6;">I'm Akash — a developer who likes going deep. From a config-driven credit engine with 35 passing tests to a CDN modelled from raw data structures, I care about things that <span style="color:#CFFF3D;">actually work</span>: real error handling, real tests, real deploys. I also design and build websites for clients who want to stand out.</p>
+        <p style="margin:16px 0 0;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.06em;color:#6b6b7a;">B.Tech · MIT-ADT University · Art, Design &amp; Technology</p>
+      </div>
     </div>
   </section>
 
@@ -146,15 +148,17 @@
       <p style="max-width:520px;margin:28px auto 0;font-size:16px;line-height:1.7;color:#9A9AA8;">Have a product, a project, or a website in mind? I'm open to full-stack work, AI builds, and freelance client sites. Let's talk.</p>
       <div style="display:flex;gap:13px;justify-content:center;flex-wrap:wrap;margin-top:38px;">
         <a data-cursor data-magnetic href="mailto:akash.gaikwad1304@gmail.com" style="display:inline-block;text-decoration:none;background:linear-gradient(135deg,#7A4DFF,#B06BFF);color:#fff;font-size:15px;font-weight:600;padding:18px 40px;border-radius:100px;">Email me ↗</a>
+        <a data-cursor data-magnetic href="https://www.linkedin.com/in/akash-gaikwad-8a061b329" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none;border:1px solid rgba(255,255,255,.22);color:#fff;font-size:15px;font-weight:600;padding:18px 40px;border-radius:100px;">LinkedIn ↗</a>
         <a data-cursor data-magnetic href="https://github.com/1Akash3" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none;border:1px solid rgba(255,255,255,.22);color:#fff;font-size:15px;font-weight:600;padding:18px 40px;border-radius:100px;">GitHub ↗</a>
+        <a data-cursor data-magnetic data-phone href="tel:PHONE_PLACEHOLDER" style="display:none;text-decoration:none;border:1px solid rgba(255,255,255,.22);color:#fff;font-size:15px;font-weight:600;padding:18px 40px;border-radius:100px;">Call ↗</a>
       </div>
     </div>
     <footer style="position:relative;z-index:2;max-width:1460px;margin:120px auto 0;padding-top:34px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;">
       <span style="font-size:16px;font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:8px;"><span style="color:#B06BFF;">✦</span>Akash Gaikwad</span>
       <div class="nv-hide-sm" style="display:flex;gap:24px;font-size:13px;color:#9A9AA8;"><a data-cursor href="#work" style="color:inherit;text-decoration:none;">Work</a><a data-cursor href="#projects" style="color:inherit;text-decoration:none;">Projects</a><a data-cursor href="#about" style="color:inherit;text-decoration:none;">About</a><a data-cursor href="#contact" style="color:inherit;text-decoration:none;">Contact</a></div>
-      <div style="display:flex;gap:20px;font-size:13px;color:#9A9AA8;"><a data-cursor href="https://github.com/1Akash3" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">GitHub</a><a data-cursor href="#contact" data-linkedin style="color:inherit;text-decoration:none;">LinkedIn</a><a data-cursor href="mailto:akash.gaikwad1304@gmail.com" style="color:inherit;text-decoration:none;">Email</a></div>
+      <div style="display:flex;gap:20px;font-size:13px;color:#9A9AA8;"><a data-cursor href="https://github.com/1Akash3" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">GitHub</a><a data-cursor href="https://www.linkedin.com/in/akash-gaikwad-8a061b329" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">LinkedIn</a><a data-cursor href="mailto:akash.gaikwad1304@gmail.com" style="color:inherit;text-decoration:none;">Email</a></div>
     </footer>
-    <div style="position:relative;z-index:2;margin-top:30px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3a3a44;">© 2026 Akash Gaikwad — Built with the NOVA design system</div>
+    <div style="position:relative;z-index:2;margin-top:30px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3a3a44;">© 2026 Akash Gaikwad — Full-Stack &amp; AI Developer</div>
   </section>
 
 </div>
