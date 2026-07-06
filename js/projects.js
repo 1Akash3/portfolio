@@ -24,6 +24,30 @@ window.CONTACT = { phone: "+91 77440 24465", whatsapp: "917744024465" };
 
 window.PROJECTS = [
   {
+    id: "rewrd",
+    name: "rewrd",
+    category: "Full-Stack",
+    tags: ["Next.js", "TypeScript", "Postgres", "SaaS"],
+    year: "2026",
+    role: "Solo architect & full-stack build",
+    blurb: "A multi-tenant QR loyalty SaaS — local businesses turn every visit into a repeat customer.",
+    summary:
+      "A production B2B SaaS platform that lets local businesses run QR-first digital loyalty programs. One evergreen QR per branch: customers scan at the counter, collect digital stamps on their phone with no app install, and unlock real rewards. Merchants get a guided campaign builder, GPS branch detection, a fraud-velocity engine, per-branch analytics, and web-push nudges — all behind an operator-managed, trial-then-subscribe access model. Deployed and live at rewrd.online.",
+    features: [
+      "Multi-tenant Express API (10+ modules) with JWT auth + role-based access",
+      "GPS branch detection & geo-fenced stamp validation (haversine distance)",
+      "Fraud-velocity engine (device fingerprint + rate windows) blocks abuse",
+      "Google Maps building-level search + distance-sorted 'offers near you'",
+      "Email-OTP + Google Sign-In, Web Push nudges, 15/15 integration tests passing"
+    ],
+    tech: ["Next.js 14", "TypeScript", "Node/Express", "Prisma", "PostgreSQL (Neon)", "Google Maps API", "Tailwind", "Web Push", "Vercel", "Render"],
+    links: { demo: "https://rewrd.online/", code: null },
+    displayUrl: "rewrd.io",
+    image: "images/shots/rewrd.png",
+    accent: "violet",
+    featured: true
+  },
+  {
     id: "spendsmart",
     name: "SpendSmart",
     category: "Full-Stack",
@@ -42,6 +66,7 @@ window.PROJECTS = [
     ],
     tech: ["React 18", "Vite", "Tailwind", "Recharts", "Framer Motion", "Node/Express", "MongoDB Atlas", "Anthropic Claude", "Capacitor", "Brevo SMTP"],
     links: { demo: "https://smart-money-managar-xdti-one.vercel.app/", code: "https://github.com/1Akash3/SmartMoneyManagar" },
+    displayUrl: "spendsmart.io",
     image: "images/shots/spendsmart.png",
     accent: "violet",
     featured: true
@@ -65,6 +90,7 @@ window.PROJECTS = [
     ],
     tech: ["Node/Express", "Joi", "Mongoose", "React 18", "Vite", "Recharts", "puppeteer-core", "@react-pdf"],
     links: { demo: null, code: "https://github.com/1Akash3/Loan-Approval" },
+    displayUrl: "creditengine.io",
     image: "images/shots/credit-engine.png",
     accent: "blue",
     featured: false
@@ -88,6 +114,7 @@ window.PROJECTS = [
     ],
     tech: ["React", "Node/Express", "MySQL 8", "Docker", "GitHub Actions", "nginx", "three.js"],
     links: { demo: null, code: "https://github.com/1Akash3/Online-Quiz-System" },
+    displayUrl: "quizhub.io",
     accent: "cyan",
     featured: false
   },
@@ -110,6 +137,7 @@ window.PROJECTS = [
     ],
     tech: ["Python", "Flask", "Regex NLP", "JavaScript", "three.js", "SpeechRecognition", "pyttsx3"],
     links: { demo: null, code: "https://github.com/1Akash3/AI-based-Mental-Health-Chatbot" },
+    displayUrl: "mindmate.io",
     accent: "magenta",
     featured: false
   },
@@ -132,6 +160,7 @@ window.PROJECTS = [
     ],
     tech: ["C++17", "Data Structures", "Dijkstra", "Vanilla JS", "SVG animation"],
     links: { demo: "https://1akash3.github.io/Content-Delivery-Network/", code: "https://github.com/1Akash3/Content-Delivery-Network" },
+    displayUrl: "cdnsim.io",
     image: "images/shots/cdn-sim.png",
     accent: "blue",
     featured: true
@@ -154,6 +183,7 @@ window.PROJECTS = [
     ],
     tech: ["Java 17", "Spring Boot 3.3", "Spring Web / RestTemplate", "Maven"],
     links: { demo: null, code: "https://github.com/1Akash3/bajaj-finserv-java-qualifier" },
+    displayUrl: "javaqualifier.io",
     accent: "lime",
     featured: false
   },
@@ -176,6 +206,7 @@ window.PROJECTS = [
     ],
     tech: ["HTML5", "Tailwind CSS", "Vanilla JS (ES6)", "localStorage", "Razorpay"],
     links: { demo: "https://1akash3.github.io/course-selling-website/", code: "https://github.com/1Akash3/course-selling-website" },
+    displayUrl: "coursehub.io",
     image: "images/shots/coursehub.png",
     accent: "cyan",
     featured: true
@@ -199,6 +230,7 @@ window.PROJECTS = [
     tech: ["Web Design", "Responsive Front-End"],
     // TODO: paste the live URL here (and code repo if any) to activate the buttons.
     links: { demo: null, code: null },
+    displayUrl: "beautyacademy.io",
     accent: "magenta",
     featured: true
   }

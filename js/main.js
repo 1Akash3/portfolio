@@ -68,6 +68,14 @@
       const cover = p.image || ("images/covers/" + p.id + ".svg");
       const tags = (p.tags || []).slice(0, 4).map((t) => '<span class="chip">' + esc(t) + "</span>").join("");
       const hasDemo = p.links && p.links.demo;
+      // .io-style display URL — clickable to the real host (demo, else code);
+      // stops propagation so it opens the site instead of the case modal.
+      const urlTarget = (p.links && (p.links.demo || p.links.code)) || null;
+      const io = p.displayUrl
+        ? (urlTarget
+            ? '<a class="pcard-url" target="_blank" rel="noopener" href="' + esc(urlTarget) + '" onclick="event.stopPropagation()">' + esc(p.displayUrl) + "</a>"
+            : '<span class="pcard-url">' + esc(p.displayUrl) + "</span>")
+        : "";
       return (
         '<article class="pcard reveal-up" data-cursor data-tilt data-project="' + p.id + '" data-category="' + esc(p.category) + '" style="--line:' + a.line + ';--glow:' + a.glow + ';--chip:' + a.chip + ';">' +
         '<div class="pcard-cover" style="background-image:url(\'' + cover + '\');">' +
@@ -78,6 +86,7 @@
         '<div class="pcard-top"><span class="pcard-cat" style="color:' + a.chip + ';border-color:' + a.line + ';">' + esc(p.category) + '</span><span class="pcard-year">' + esc(p.year) + "</span></div>" +
         '<div class="pcard-mid"><h3 class="pcard-name">' + esc(p.name) + "</h3><p class=\"pcard-blurb\">" + esc(p.blurb) + "</p></div>" +
         '<div class="pcard-tags">' + tags + "</div>" +
+        (io ? '<div class="pcard-urlrow">' + io + "</div>" : "") +
         "</div></article>"
       );
     }).join("");
@@ -131,7 +140,7 @@
     el('[data-m="features"]', overlay).innerHTML = (p.features || []).map((f) => "<li>" + esc(f) + "</li>").join("");
     el('[data-m="tech"]', overlay).innerHTML = (p.tech || []).map((t) => '<span class="chip">' + esc(t) + "</span>").join("");
     const acts = [];
-    if (p.links && p.links.demo) acts.push('<a class="btn btn-solid" data-cursor data-magnetic target="_blank" rel="noopener" href="' + esc(p.links.demo) + '">Live demo ↗</a>');
+    if (p.links && p.links.demo) acts.push('<a class="btn btn-solid" data-cursor data-magnetic target="_blank" rel="noopener" href="' + esc(p.links.demo) + '">' + (p.displayUrl ? esc(p.displayUrl) + " ↗" : "Live demo ↗") + "</a>");
     if (p.links && p.links.code) acts.push('<a class="btn btn-ghost" data-cursor data-magnetic target="_blank" rel="noopener" href="' + esc(p.links.code) + '">View code ↗</a>');
     if (!acts.length) acts.push('<span class="btn btn-ghost is-disabled">Link coming soon</span>');
     el('[data-m="actions"]', overlay).innerHTML = acts.join("");
